@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Emmanuel Iren</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <!-- Login Form -->
+      <div id="loginSection" class="admin-card">
+        <h1>Admin Login</h1>
+        <p>Sign in to manage the website content.</p>
+        <form id="loginForm" class="admin-form">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="admin@emmanueliren.com" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required />
+          </label>
+          <button type="submit">Sign In</button>
+          <div id="loginError" class="admin-error"></div>
+        </form>
+        <a href="/" class="admin-back">← Back to website</a>
+      </div>
+
+      <!-- Admin Dashboard -->
+      <div id="dashboardSection" class="admin-dashboard">
+        <div class="admin-header">
+          <h1>Admin Dashboard</h1>
+          <button id="logoutBtn">Sign Out</button>
+        </div>
+        
+        <div class="admin-stats">
+          <div class="stat-card">
+            <h3>Total Contact Requests</h3>
+            <div class="value" id="totalRequests">-</div>
+          </div>
+          <div class="stat-card">
+            <h3>Pending Requests</h3>
+            <div class="value" id="pendingRequests">-</div>
+          </div>
+          <div class="stat-card">
+            <h3>Replied</h3>
+            <div class="value" id="repliedRequests">-</div>
+          </div>
+        </div>
+        
+        <div class="contact-requests">
+          <h2>Recent Contact Requests</h2>
+          <div id="contactRequestsList" class="contact-requests-list">
+            <p style="color: rgba(255,255,255,0.6);">Loading...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+  </body>
+</html>

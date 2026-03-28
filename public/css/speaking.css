@@ -1,0 +1,349 @@
+/* ==========================================================================
+   Speaking Page Styles
+   ========================================================================== */
+
+/* Page Header
+   ========================================================================== */
+.page-header {
+  background: var(--black);
+  color: var(--white);
+  padding: 10rem 0 5rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--white);
+  margin-top: 1rem;
+}
+
+.page-header__text {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.125rem;
+}
+
+/* Topics Section
+   ========================================================================== */
+.topics-section {
+  background: var(--white);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.topic-card {
+  background: var(--gray-100);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.topic-card:hover {
+  background: var(--white);
+  border-color: var(--gray-200);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.topic-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--white);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.topic-card:hover .topic-icon {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.topic-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.topic-card p {
+  color: var(--gray-600);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* Events Section
+   ========================================================================== */
+.events-section {
+  background: var(--gray-100);
+}
+
+.events-content {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.events-info h2 {
+  margin: 0.75rem 0 1rem;
+}
+
+.events-info p {
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.4s var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.event-item:hover {
+  border-color: var(--gray-200);
+  box-shadow: var(--shadow-md);
+  transform: translateX(8px);
+}
+
+.event-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.event-details h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+}
+
+.event-details p {
+  color: var(--gray-600);
+  font-size: 0.9375rem;
+}
+
+/* Booking Section
+   ========================================================================== */
+.booking-section {
+  background: var(--white);
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.booking-info h2 {
+  margin: 0.75rem 0 1rem;
+}
+
+.booking-info p {
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.booking-contact {
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.booking-contact h4 {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  margin-bottom: 0.5rem;
+}
+
+.booking-contact a {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: color 0.3s var(--transition-smooth);
+}
+
+.booking-contact a:hover {
+  color: var(--black);
+}
+
+/* Booking Form Styles
+   ========================================================================== */
+.booking-form {
+  background: var(--gray-100);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gray-800);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 0.75rem;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(163, 32, 21, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Testimonials Section
+   ========================================================================== */
+.testimonials-section {
+  background: var(--gray-100);
+  padding-bottom: 6rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: all 0.4s var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.testimonial:hover {
+  border-color: var(--gray-200);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.testimonial p {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--black);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial cite {
+  font-style: normal;
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .events-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .booking-info {
+    text-align: center;
+  }
+  
+  .booking-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form {
+    padding: 1.5rem;
+  }
+  
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .event-number {
+    margin: 0 auto;
+  }
+}
