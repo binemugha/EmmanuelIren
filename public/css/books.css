@@ -71,22 +71,32 @@
 }
 
 .book-1 {
-  transform: rotate(-8deg) translateX(30px);
+  transform: rotate(-10deg) translateX(40px);
   z-index: 1;
 }
 
 .book-2 {
-  transform: rotate(-3deg) translateX(15px);
+  transform: rotate(-6deg) translateX(24px);
   z-index: 2;
 }
 
 .book-3 {
-  transform: rotate(3deg) translateX(-15px);
-  z-index: 2;
+  transform: rotate(-2deg) translateX(8px);
+  z-index: 3;
 }
 
 .book-4 {
-  transform: rotate(8deg) translateX(-30px);
+  transform: rotate(2deg) translateX(-8px);
+  z-index: 3;
+}
+
+.book-5 {
+  transform: rotate(6deg) translateX(-24px);
+  z-index: 2;
+}
+
+.book-6 {
+  transform: rotate(10deg) translateX(-40px);
   z-index: 1;
 }
 
@@ -719,7 +729,7 @@
     height: 240px;
   }
   
-  .book-1, .book-2, .book-3, .book-4 {
+  .book-1, .book-2, .book-3, .book-4, .book-5, .book-6 {
     transform: none;
   }
   
@@ -730,6 +740,22 @@
   
   .book-cover-large {
     max-width: 300px;
+  }
+  
+  .reviews-grid,
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-card,
+  .video-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .reviews-section,
+  .videos-section {
+    margin-top: 4rem;
   }
   
   .cta-box {
@@ -771,5 +797,34 @@
   
   .featured-actions .btn {
     width: 100%;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+  }
+  
+  .review-card::before {
+    font-size: 5rem;
+  }
+  
+  .review-text {
+    font-size: 0.875rem;
+  }
+  
+  .video-info {
+    padding: 1.25rem;
+  }
+  
+  .video-info h4 {
+    font-size: 1rem;
+  }
+  
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .section-header--small h3 {
+    font-size: 1.5rem;
   }
 }
