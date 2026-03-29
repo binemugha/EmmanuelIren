@@ -637,7 +637,7 @@ p {
     width: 70%;
     max-width: 300px;
     height: 100vh;
-    background: var(--white);
+    background: var(--black);
     flex-direction: column;
     padding: 6rem 2rem 2rem;
     gap: 1.5rem;
@@ -650,7 +650,7 @@ p {
   }
   
   .nav__link {
-    color: var(--black);
+    color: var(--white);
     font-size: 1rem;
   }
   
