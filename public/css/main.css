@@ -238,19 +238,18 @@ p {
 }
 
 .nav--scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-sm);
+  background: var(--black);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   padding: 0.875rem 0;
 }
 
 .nav--scrolled .nav__logo,
 .nav--scrolled .nav__link {
-  color: var(--black);
+  color: var(--white);
 }
 
 .nav--scrolled .nav__toggle-line {
-  background: var(--black);
+  background: var(--white);
 }
 
 .nav__container {

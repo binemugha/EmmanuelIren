@@ -204,6 +204,65 @@
 .featured-book {
   background: var(--gray-100);
   padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background */
+.featured-book__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.featured-book__gradient {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+}
+
+.featured-book__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(212, 175, 55, 0.3);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(212, 175, 55, 0.2);
+  bottom: 10%;
+  left: -50px;
+  animation-delay: -10s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.05);
+  }
 }
 
 .featured-grid {
@@ -347,6 +406,264 @@
   margin-top: 4rem;
 }
 
+/* Reviews Section
+   ========================================================================== */
+.reviews-section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.section-header--small {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header--small .eyebrow {
+  color: var(--accent);
+}
+
+.section-header--small h3 {
+  font-size: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s var(--transition-smooth);
+  border: 1px solid var(--gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  color: var(--accent);
+  opacity: 0.1;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.review-card:hover::before {
+  opacity: 0.15;
+  transform: rotate(10deg) scale(1.1);
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.review-stars {
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, #c9a227 100%);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--black);
+}
+
+.reviewer-title {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+/* Videos Section
+   ========================================================================== */
+.videos-section {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.video-card {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s var(--transition-smooth);
+  border: 1px solid var(--gray-100);
+  text-decoration: none;
+  display: block;
+}
+
+.video-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+.video-thumbnail {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.love-theme {
+  background: linear-gradient(135deg, #8B2635 0%, #5C1620 50%, #3D0E15 100%);
+}
+
+.marriage-theme {
+  background: linear-gradient(135deg, #2C3E50 0%, #1A252F 50%, #0F1519 100%);
+}
+
+.wisdom-theme {
+  background: linear-gradient(135deg, #1E3A5F 0%, #0F1E33 50%, #081018 100%);
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  transition: all 0.3s var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-card:hover .play-button {
+  transform: scale(1.1);
+  background: var(--accent);
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.video-info {
+  padding: 1.5rem;
+}
+
+.video-info h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.video-info p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s var(--transition-smooth);
+}
+
+.video-card:hover .video-meta {
+  color: var(--black);
+}
+
+.video-meta svg {
+  transition: transform 0.3s var(--transition-smooth);
+}
+
+.video-card:hover .video-meta svg {
+  transform: translateX(3px);
+}
+
+/* Scroll Reveal Animations for Reviews & Videos
+   ========================================================================== */
+[data-review],
+[data-video] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--transition-smooth), 
+              transform 0.6s var(--transition-smooth),
+              box-shadow 0.4s var(--transition-smooth);
+}
+
+[data-review].revealed,
+[data-video].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Books CTA Section
    ========================================================================== */
 .books-cta {
@@ -382,6 +699,11 @@
    ========================================================================== */
 @media (max-width: 1200px) {
   .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .reviews-grid,
+  .videos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
