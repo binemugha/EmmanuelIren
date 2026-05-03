@@ -36,10 +36,14 @@
   <main class="page-transition">
     <!-- Page Header -->
     <header class="page-header">
+      <div class="ambient-orbs">
+        <div class="ambient-orb" style="width: 500px; height: 500px; background: rgba(163, 32, 21, 0.15); top: -150px; left: 20%; animation-delay: 0s;"></div>
+        <div class="ambient-orb" style="width: 300px; height: 300px; background: rgba(163, 32, 21, 0.1); bottom: -50px; right: 20%; animation-delay: -8s;"></div>
+      </div>
       <div class="container">
-        <span class="eyebrow reveal">Speaking</span>
-        <h1 class="reveal delay-100">Bring clarity to<br>your gathering</h1>
-        <p class="page-header__text reveal delay-200">Conferences, church services, leadership summits, and special events—Emmanuel brings gospel-centered teaching that transforms.</p>
+        <span class="eyebrow blur-reveal">Speaking</span>
+        <h1 class="blur-reveal delay-100" data-split-text>Bring clarity to your gathering</h1>
+        <p class="page-header__text blur-reveal delay-200">Conferences, church services, leadership summits, and special events—Emmanuel brings gospel-centered teaching that transforms.</p>
       </div>
     </header>
 
@@ -52,7 +56,7 @@
         </div>
         
         <div class="topics-grid stagger-children">
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4v15.5A2.5 2.5 0 0 1 6.5 22H20V6a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 6.5z"/>
@@ -62,7 +66,7 @@
             <p>Clear, compelling teaching on the finished work of Christ and its implications for everyday life.</p>
           </div>
           
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="12" cy="12" r="10"/>
@@ -74,7 +78,7 @@
             <p>Forming leaders who lead with integrity, vision, and spiritual clarity in any context.</p>
           </div>
           
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 4 0v9"/>
@@ -84,7 +88,7 @@
             <p>Strategic insights on starting and growing healthy, gospel-centered communities.</p>
           </div>
           
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/>
@@ -94,7 +98,7 @@
             <p>Discovering identity, purpose, and the path to becoming all God designed you to be.</p>
           </div>
           
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M9 18V5l12-2v13"/>
@@ -106,7 +110,7 @@
             <p>The intersection of faith, art, and expression in building a vibrant spiritual life.</p>
           </div>
           
-          <div class="topic-card">
+          <div class="topic-card magnetic">
             <div class="topic-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -130,7 +134,7 @@
           </div>
           
           <div class="events-list stagger-children">
-            <div class="event-item">
+            <div class="event-item magnetic">
               <span class="event-number">I</span>
               <div class="event-details">
                 <h3>Conferences</h3>
@@ -138,7 +142,7 @@
               </div>
             </div>
             
-            <div class="event-item">
+            <div class="event-item magnetic">
               <span class="event-number">II</span>
               <div class="event-details">
                 <h3>Church Services</h3>
@@ -146,7 +150,7 @@
               </div>
             </div>
             
-            <div class="event-item">
+            <div class="event-item magnetic">
               <span class="event-number">III</span>
               <div class="event-details">
                 <h3>Leadership Summits</h3>
@@ -154,7 +158,7 @@
               </div>
             </div>
             
-            <div class="event-item">
+            <div class="event-item magnetic">
               <span class="event-number">IV</span>
               <div class="event-details">
                 <h3>Campus Events</h3>
@@ -181,7 +185,7 @@
             </div>
           </div>
           
-          <form class="booking-form reveal" id="bookingForm">
+          <form class="booking-form scale-reveal" id="bookingForm">
             <div class="form-group">
               <label for="name">Your Name *</label>
               <input type="text" id="name" name="name" required placeholder="Full name">
@@ -230,27 +234,27 @@
     <!-- Testimonials -->
     <section class="section testimonials-section">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header blur-reveal">
           <span class="eyebrow">Testimonials</span>
-          <h2>What organizers say</h2>
+          <h2 data-split-text>What organizers say</h2>
         </div>
         
         <div class="testimonials-grid stagger-children">
-          <blockquote class="testimonial">
+          <blockquote class="testimonial magnetic">
             <p>"Emmanuel's teaching brought a fresh clarity to our conference. The attendees are still talking about the impact months later."</p>
             <footer>
               <cite>— Conference Organizer, Lagos</cite>
             </footer>
           </blockquote>
           
-          <blockquote class="testimonial">
+          <blockquote class="testimonial magnetic">
             <p>"His approach to leadership is both biblical and practical. Our team left equipped and inspired to lead better."</p>
             <footer>
               <cite>— Pastor, Nairobi</cite>
             </footer>
           </blockquote>
           
-          <blockquote class="testimonial">
+          <blockquote class="testimonial magnetic">
             <p>"The gospel comes alive when Emmanuel teaches. Our youth were deeply moved and transformed by his messages."</p>
             <footer>
               <cite>— Youth Director, London</cite>
@@ -303,7 +307,7 @@
     </div>
   </footer>
 
-  <script type="module" src="js/main.js"></script>
-  <script type="module" src="js/speaking.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/speaking.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initReviewsReveal();
   initVideosReveal();
+  initBookTilt();
 });
 
 /**
@@ -65,4 +66,33 @@ function initVideosReveal() {
   }, observerOptions);
 
   videoCards.forEach(card => observer.observe(card));
+}
+
+/**
+ * 3D Tilt Effect for Featured Book
+ */
+function initBookTilt() {
+  const tiltElements = document.querySelectorAll('[data-tilt]');
+  
+  if (tiltElements.length === 0) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  
+  tiltElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+      
+      el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'perspective(1000px) rotateX(0) rotateY(-8deg) translateY(0)';
+    });
+  });
 }

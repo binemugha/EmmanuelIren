@@ -41,8 +41,29 @@ document.querySelectorAll('.nav__link').forEach(link => {
   });
 });
 
-// Scroll Reveal Animation
-const revealElements = document.querySelectorAll('.reveal');
+// ============================================
+// SPLIT TEXT ANIMATION
+// ============================================
+function initSplitText() {
+  const splitElements = document.querySelectorAll('[data-split-text]');
+  
+  splitElements.forEach(element => {
+    const text = element.textContent.trim();
+    const words = text.split(/\s+/);
+    
+    element.innerHTML = words.map((word, index) => {
+      const delay = index * 0.05;
+      return `<span class="word" style="transition-delay: ${delay}s"><span class="word-inner" style="transition-delay: ${delay}s">${word}</span></span>`;
+    }).join(' ');
+    
+    element.classList.add('split-text');
+  });
+}
+
+// ============================================
+// SCROLL REVEAL ANIMATION
+// ============================================
+const revealElements = document.querySelectorAll('.reveal, .blur-reveal, .scale-reveal, .slide-reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -93,13 +114,159 @@ const imageObserver = new IntersectionObserver((entries) => {
 
 imageReveals.forEach(el => imageObserver.observe(el));
 
-// Dynamic year in footer
+// Split text reveal observer
+const splitTextObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      splitTextObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// ============================================
+// PARALLAX EFFECT
+// ============================================
+function initParallax() {
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  if (parallaxElements.length === 0) return;
+  
+  // Skip on touch devices
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  
+  let ticking = false;
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.pageYOffset;
+        
+        parallaxElements.forEach(el => {
+          const speed = parseFloat(el.dataset.parallax) || 0.1;
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + scrollY;
+          const distance = scrollY - elementTop + window.innerHeight;
+          const translateY = distance * speed;
+          
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.style.transform = `translateY(${translateY}px)`;
+          }
+        });
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ============================================
+// MAGNETIC BUTTONS
+// ============================================
+function initMagneticButtons() {
+  const magneticElements = document.querySelectorAll('.magnetic');
+  if (magneticElements.length === 0) return;
+  
+  // Skip on touch devices
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  
+  magneticElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+
+// ============================================
+// AMBIENT ORB MOUSE FOLLOW
+// ============================================
+function initAmbientOrbs() {
+  const orbContainers = document.querySelectorAll('.ambient-orbs');
+  if (orbContainers.length === 0) return;
+  
+  // Skip on touch devices
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  
+  let ticking = false;
+  
+  document.addEventListener('mousemove', (e) => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        orbContainers.forEach(container => {
+          const orbs = container.querySelectorAll('.ambient-orb');
+          orbs.forEach((orb, index) => {
+            const factor = (index + 1) * 15;
+            const moveX = (mouseX - 0.5) * factor;
+            const moveY = (mouseY - 0.5) * factor;
+            orb.style.marginLeft = `${moveX}px`;
+            orb.style.marginTop = `${moveY}px`;
+          });
+        });
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ============================================
+// SMOOTH SCROLL PROGRESS
+// ============================================
+function initScrollProgress() {
+  const progressElements = document.querySelectorAll('[data-scroll-progress]');
+  if (progressElements.length === 0) return;
+  
+  let ticking = false;
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollY / docHeight;
+        
+        progressElements.forEach(el => {
+          const property = el.dataset.scrollProgress || 'opacity';
+          if (property === 'opacity') {
+            el.style.opacity = 1 - (progress * parseFloat(el.dataset.progressFactor || 1));
+          } else if (property === 'scale') {
+            el.style.transform = `scale(${1 + progress * parseFloat(el.dataset.progressFactor || 0)})`;
+          }
+        });
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ============================================
+// DYNAMIC YEAR IN FOOTER
+// ============================================
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear().toString();
 }
 
-// Smooth scroll for anchor links
+// ============================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
@@ -116,7 +283,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Button ripple effect
+// ============================================
+// BUTTON RIPPLE EFFECT
+// ============================================
 document.querySelectorAll('.btn--primary, .btn--outline').forEach(button => {
   button.addEventListener('click', function(e) {
     const rect = this.getBoundingClientRect();
@@ -158,5 +327,28 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// INITIALIZE ALL ANIMATIONS
+// ============================================
+function initAll() {
+  initSplitText();
+  
+  // Observe split text elements after initialization
+  document.querySelectorAll('.split-text').forEach(el => {
+    splitTextObserver.observe(el);
+  });
+  
+  initParallax();
+  initMagneticButtons();
+  initAmbientOrbs();
+  initScrollProgress();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
+}
 
 console.log('Emmanuel Iren Portfolio - Ready');
