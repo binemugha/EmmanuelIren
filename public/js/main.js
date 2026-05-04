@@ -77,8 +77,6 @@ const revealObserver = new IntersectionObserver((entries) => {
   rootMargin: '0px 0px -50px 0px'
 });
 
-revealElements.forEach(el => revealObserver.observe(el));
-
 // Stagger children animation
 const staggerContainers = document.querySelectorAll('.stagger-children');
 
@@ -93,8 +91,6 @@ const staggerObserver = new IntersectionObserver((entries) => {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
 });
-
-staggerContainers.forEach(el => staggerObserver.observe(el));
 
 // Image reveal animation
 const imageReveals = document.querySelectorAll('.image-reveal');
@@ -112,8 +108,6 @@ const imageObserver = new IntersectionObserver((entries) => {
   threshold: 0.2
 });
 
-imageReveals.forEach(el => imageObserver.observe(el));
-
 // Split text reveal observer
 const splitTextObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -126,6 +120,13 @@ const splitTextObserver = new IntersectionObserver((entries) => {
   threshold: 0.2,
   rootMargin: '0px 0px -50px 0px'
 });
+
+// Only enable CSS observers if GSAP is not available
+if (typeof gsap === 'undefined') {
+  revealElements.forEach(el => revealObserver.observe(el));
+  staggerContainers.forEach(el => staggerObserver.observe(el));
+  imageReveals.forEach(el => imageObserver.observe(el));
+}
 
 // ============================================
 // PARALLAX EFFECT
@@ -332,12 +333,14 @@ document.head.appendChild(style);
 // INITIALIZE ALL ANIMATIONS
 // ============================================
 function initAll() {
-  initSplitText();
-  
-  // Observe split text elements after initialization
-  document.querySelectorAll('.split-text').forEach(el => {
-    splitTextObserver.observe(el);
-  });
+  // Only run basic split text if GSAP is not available
+  // GSAP script handles advanced text splitting
+  if (typeof gsap === 'undefined') {
+    initSplitText();
+    document.querySelectorAll('.split-text').forEach(el => {
+      splitTextObserver.observe(el);
+    });
+  }
   
   initParallax();
   initMagneticButtons();
