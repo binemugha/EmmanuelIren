@@ -4,200 +4,539 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emmanuel Iren | Pastor, Author, Communicator</title>
-  <meta name="description" content="Official portfolio for Pastor Emmanuel Iren, Lead Pastor of Celebration Church International—featuring messages, books, music, and ministry initiatives.">
-  
+  <meta name="description" content="Emmanuel Iren - Pastor, Author, and Communicator building a bold, Christ-conscious generation through Celebration Church International.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/books.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/speaking.css">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="nav">
     <div class="container nav__container">
-      <a href="/" class="nav__logo">Emmanuel Iren</a>
-      
+      <a href="#home" class="nav__logo" aria-label="Emmanuel Iren Home">
+        <img src="images/logo.svg" alt="Emmanuel Iren">
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#books" class="nav__link">Books</a></li>
+        <li><a href="#media" class="nav__link">Media</a></li>
+        <li><a href="#speaking" class="nav__link">Speaking</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__social">
+        <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@pst_iren" target="_blank" rel="noreferrer" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.89 2.89 2.89 0 0 1 2.88-2.89c.23 0 .45.03.66.08V9.4a6.37 6.37 0 0 0-.66-.04A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.83a8.23 8.23 0 0 0 4.8 1.53V6.94a4.85 4.85 0 0 1-1.04-.25z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/pst_iren/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </div>
+
       <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="nav__toggle-line"></span>
         <span class="nav__toggle-line"></span>
       </button>
-      
-      <ul class="nav__links">
-        <li><a href="/" class="nav__link nav__link--active">Home</a></li>
-        <li><a href="books.html" class="nav__link">Books</a></li>
-        <li><a href="media.html" class="nav__link">Media</a></li>
-        <li><a href="speaking.html" class="nav__link">Speaking</a></li>
-      </ul>
     </div>
   </nav>
 
   <main class="page-transition">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero__bg">
-        <div class="hero__gradient"></div>
+    <!-- Home Hero -->
+    <section id="home" class="hero">
+      <div class="hero__media">
+        <img src="images/hero-emmanuel.jpg" alt="Emmanuel Iren">
       </div>
+      <div class="hero__gradient"></div>
+
       <div class="container hero__container">
-        <div class="hero__content animate-fade-up">
-          <span class="eyebrow">Lead Pastor, Celebration Church International</span>
-          <h1>Gospel clarity for a bold, Christ-conscious generation.</h1>
-          <p class="hero__text">Emmanuel Iren is a Nigerian pastor, author, and communicator whose ministry centers on strengthening believers through doctrine, worship, and leadership development.</p>
-          <div class="hero__actions">
-            <a href="#journey" class="btn btn--primary">Discover More</a>
-            <a href="speaking.html" class="btn btn--outline-light">Invite to Speak</a>
+        <div class="hero__text">
+          <h1>Raising a bold, Christ-conscious generation.</h1>
+          <div class="hero__buttons">
+            <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer" class="hero__btn hero__btn--red">Watch Messages</a>
+            <a href="#contact" class="hero__btn hero__btn--light">Explore Ministry</a>
           </div>
         </div>
-        <div class="hero__media image-reveal">
-          <img src="https://joincci.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpastey.c7520b0d.webp&w=1200&q=75" alt="Pastor Emmanuel Iren" loading="eager">
+
+        <div class="hero__card">
+          <div class="hero__card-inner">
+            <div class="hero__card-thumb">
+              <img src="images/books/saving-grace.jpg" alt="100 days of Discipleship" width="56" height="56">
+            </div>
+            <div class="hero__card-body">
+              <p><strong>100 days of Discipleship</strong> is out, check it out here.</p>
+              <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer">Watch video</a>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- <div class="hero__scroll">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about__layout">
+        <div class="about__content-col">
+          <div class="about__content">
+            <span class="about__eyebrow">About Emmanuel Iren</span>
+            <h2>MINISTRY,<br>MUSIC AND<br>MOVIES</h2>
+            <div class="about__text">
+              <p>Apostle Emmanuel Iren is the visionary founder and Lead Pastor of Celebration Church International (CCI), a fast-growing global ministry with over 15,000 members and more than 30 campuses in Nigeria, the UK, Canada, and the USA. He is renowned for his dynamic preaching, teaching, and gospel songwriting. His mission is to help people discover and confidently live out their God-given purpose through the transformative power of the Gospel.</p>
+              <p>In addition to leading CCI, he oversees two significant platforms: Manifest Bible Course, an interdenominational Bible training program, and the Triumph30 Devotional, a daily devotional designed to help believers develop a consistent prayer life and relationship with God. Both platforms are instrumental in equipping believers to live purpose-driven lives rooted in biblical truth.</p>
+            </div>
+            <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer" class="about__btn">Follow on Youtube</a>
+          </div>
+        </div>
+        <div class="about__media">
+          <img src="images/about-emmanuel.webp" alt="Emmanuel Iren on stage">
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="books-hero">
+      <div class="container">
+        <div class="hero-text reveal">
+          <h1 class="hero-headline">
+            <span>Author</span>
+            <span>with</span>
+            <span>many books</span>
+            <span>and counting</span>
+          </h1>
+        </div>
+        
+        <div class="books-showcase reveal delay-200">
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/rqbe9ija1s7jvf" target="_blank" rel="noreferrer" class="book-card book-1">
+            <div class="book-cover">
+              <img src="images/books/love-code.jpg" alt="Love Code - Foundations for a Strong and Lasting Marriage" loading="lazy">
+            </div>
+          </a>
+          
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/epfixljsolou" target="_blank" rel="noreferrer" class="book-card book-2">
+            <div class="book-cover">
+              <img src="images/books/leading-seeks-you.jpg" alt="Leading Seeks You - Simple Keys to Discerning Divine Direction" loading="lazy">
+            </div>
+          </a>
+          
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/88lvnmidhgmpzx" target="_blank" rel="noreferrer" class="book-card book-3">
+            <div class="book-cover">
+              <img src="images/books/pray-book.jpg" alt="Pray Book - Practical Strategy for Building a Prayer Life" loading="lazy">
+            </div>
+          </a>
+          
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/b36wydg6sw1r" target="_blank" rel="noreferrer" class="book-card book-4">
+            <div class="book-cover">
+              <img src="images/books/am-i-being-fooled.jpg" alt="Am I Being Fooled? - About God, the Bible and Jesus Christ" loading="lazy">
+            </div>
+          </a>
+          
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/rbg466t90i7v5g" target="_blank" rel="noreferrer" class="book-card book-5">
+            <div class="book-cover">
+              <img src="images/books/saving-grace.jpg" alt="Saving Grace" loading="lazy">
+            </div>
+          </a>
+          
+          <a href="https://flutterwave.com/store/emmanuelirenbooks/iirtmle31hu3" target="_blank" rel="noreferrer" class="book-card book-6">
+            <div class="book-cover">
+              <img src="images/books/purposefully.jpg" alt="Purposefully" loading="lazy">
+            </div>
+          </a>
+        </div>
+        
+        <div class="hero-cta reveal delay-300">
+          <a href="https://flutterwave.com/store/emmanuelirenbooks" target="_blank" rel="noreferrer" class="btn btn--primary">See All Books</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section featured-book">
+      <div class="featured-book__bg" aria-hidden="true">
+        <div class="featured-book__gradient"></div>
+        <div class="featured-book__orb orb-1"></div>
+        <div class="featured-book__orb orb-2"></div>
+      </div>
+      
+      <div class="container">
+        <div class="featured-grid">
+          <div class="featured-image reveal">
+            <div class="book-realistic">
+              <div class="book-spine"></div>
+              <div class="book-pages">
+                <div class="page-edge"></div>
+              </div>
+              <div class="book-cover-large">
+                <img src="images/books/love-code.jpg" alt="Love Code - Foundations for a Strong and Lasting Marriage" loading="lazy">
+              </div>
+            </div>
+          </div>
+          
+          <div class="featured-info reveal">
+            <span class="eyebrow">Featured</span>
+            <h2>Love Code</h2>
+            <p class="lead">Discover the foundations for building a strong and lasting marriage rooted in biblical principles.</p>
+            <p>In this transformative book, Emmanuel Iren explores God's design for relationships, offering practical wisdom for singles and married couples alike. Learn to decode love through the lens of Scripture and build relationships that stand the test of time.</p>
+            <div class="featured-actions">
+              <a href="https://flutterwave.com/store/emmanuelirenbooks" target="_blank" rel="noreferrer" class="btn btn--primary">Get the Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Media Section -->
+    <section id="media" class="media-hero">
+      <div class="video-background">
+        <div class="video-overlay"></div>
+        <iframe 
+          id="heroVideo"
+          src="https://www.youtube.com/embed/videoseries?list=UU0LnPAjiEk6pZqd7bIzq4sw&autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playlist=UU0LnPAjiEk6pZqd7bIzq4sw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <!-- <div class="media-hero__content">
+        <span class="eyebrow reveal">Media</span>
+        <h1 class="reveal delay-100">Teachings that<br>transform lives</h1>
+        <p class="media-hero__text reveal delay-200">Weekly sermons, conference messages, and biblical teachings to strengthen your faith and deepen your walk with God.</p>
+        <div class="media-hero__actions reveal delay-300">
+          <a href="#latest" class="btn btn--primary">Watch Latest</a>
+          <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer" class="btn btn--outline-light">Subscribe on YouTube</a>
+        </div>
       </div> -->
     </section>
 
-    <!-- Ministry Focus Section -->
-    <!-- <section class="section ministry-focus">
+    <section class="section featured-video-section" id="latest">
       <div class="container">
         <div class="section-header reveal">
-          <span class="eyebrow">Ministry Focus</span>
-          <h2>Building believers, sending witnesses</h2>
-          <p>Three strategic pillars that define the ministry mandate: teaching Christ, building communities, and raising leaders.</p>
+          <span class="eyebrow">Latest Message</span>
+          <h2>Featured teaching</h2>
         </div>
         
-        <div class="cards-grid stagger-children">
-          <article class="card">
-            <div class="card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 21V9M12 3L2 9h20L12 3zM4 9v12M20 9v12M6 21h12"/>
-              </svg>
+        <div class="featured-video reveal">
+          <div class="video-embed">
+            <iframe 
+              src="https://www.youtube.com/embed?listType=playlist&list=UU0LnPAjiEk6pZqd7bIzq4sw&index=1"
+              title="Latest Sermon"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="featured-video__info">
+            <span class="video-label">This Week</span>
+            <h3>The Reality of Christ in You</h3>
+            <p>Understanding your identity and authority in Christ. A powerful message on who you are in Him and how to walk in that reality every day.</p>
+            <div class="video-meta">
+              <span class="video-date">March 2024</span>
+              <span class="video-views">12K views</span>
             </div>
-            <h3 class="card__title">CCI Global</h3>
-            <p class="card__text">Strategic campus planting and apostolic oversight that keeps the message of Christ central while shaping vibrant communities across Africa, Europe, and North America.</p>
-            <a href="https://joincci.org" target="_blank" rel="noreferrer" class="card__link">Visit Website</a>
-          </article>
-          
-          <article class="card">
-            <div class="card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
-              </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section podcast-section">
+      <div class="container">
+        <div class="podcast-content">
+          <div class="podcast-info reveal">
+            <span class="eyebrow">Listen Anywhere</span>
+            <h2>Audio teachings & podcasts</h2>
+            <p>Take the teachings with you. Listen on Spotify, Apple Podcasts, or your favorite podcast app.</p>
+            <div class="podcast-platforms">
+              <a href="https://open.spotify.com/artist/1Ge81wiDXhRxTHVE1pdHyw" target="_blank" rel="noreferrer" class="platform-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                <span>Spotify</span>
+              </a>
+              <a href="https://podcasts.apple.com" target="_blank" rel="noreferrer" class="platform-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M5.34 0A5.328 5.328 0 0 0 0 5.34v13.32A5.328 5.328 0 0 0 5.34 24h13.32A5.328 5.328 0 0 0 24 18.66V5.34A5.328 5.328 0 0 0 18.66 0zm6.525 2.568c3.336 0 6.105 2.424 6.105 5.544 0 3.024-2.601 5.544-6.105 5.544-3.504 0-6.105-2.52-6.105-5.544 0-3.12 2.769-5.544 6.105-5.544zm0 1.944c-2.064 0-3.696 1.536-3.696 3.6 0 1.992 1.632 3.6 3.696 3.6 2.016 0 3.696-1.608 3.696-3.6 0-2.064-1.68-3.6-3.696-3.6zm-3.12 9.216c.696 0 1.272.576 1.272 1.272v4.44c0 .696-.576 1.272-1.272 1.272-.696 0-1.272-.576-1.272-1.272v-4.44c0-.696.576-1.272 1.272-1.272zm6.24 0c.696 0 1.272.576 1.272 1.272v4.44c0 .696-.576 1.272-1.272 1.272-.696 0-1.272-.576-1.272-1.272v-4.44c0-.696.576-1.272 1.272-1.272z"/>
+                </svg>
+                <span>Apple Podcasts</span>
+              </a>
+              <a href="https://www.youtube.com/@pst_iren" target="_blank" rel="noreferrer" class="platform-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <span>YouTube</span>
+              </a>
             </div>
-            <h3 class="card__title">Leader Formation</h3>
-            <p class="card__text">Ministry Staff School, intensives, and bespoke coaching that form pastors, teachers, and worship leaders rooted in sound doctrine and creative expression.</p>
-            <a href="#journey" class="card__link">Learn More</a>
-          </article>
+          </div>
           
-          <article class="card">
-            <div class="card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="podcast-visual reveal">
+            <div class="audio-wave">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section media-cta-section">
+      <div class="container">
+        <div class="media-cta reveal">
+          <div class="media-cta__content">
+            <span class="eyebrow">Never Miss a Message</span>
+            <h2>Subscribe for weekly teachings</h2>
+            <p>Get the latest sermons, articles, and ministry updates delivered straight to your inbox.</p>
+          </div>
+          <a href="https://emmanueliren.substack.com/subscribe" target="_blank" rel="noreferrer" class="btn btn--primary">Subscribe Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speaking Section -->
+    <section id="speaking" class="page-header">
+      <div class="container">
+        <span class="eyebrow reveal">Speaking</span>
+        <h1 class="reveal delay-100">Bring clarity to<br>your gathering</h1>
+        <p class="page-header__text reveal delay-200">Conferences, church services, leadership summits, and special events—Emmanuel brings gospel-centered teaching that transforms.</p>
+      </div>
+    </section>
+
+    <!-- <section class="section topics-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Speaking Topics</span>
+          <h2>Areas of expertise</h2>
+        </div>
+        
+        <div class="topics-grid stagger-children">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4v15.5A2.5 2.5 0 0 1 6.5 22H20V6a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 6.5z"/>
               </svg>
             </div>
-            <h3 class="card__title">Creative Resources</h3>
-            <p class="card__text">Books, devotionals, and songs that articulate the gospel in language today's generation can hold onto and apply in everyday life.</p>
-            <a href="media.html" class="card__link">Explore Resources</a>
-          </article>
+            <h3>Gospel Doctrine</h3>
+            <p>Clear, compelling teaching on the finished work of Christ and its implications for everyday life.</p>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3>Leadership</h3>
+            <p>Forming leaders who lead with integrity, vision, and spiritual clarity in any context.</p>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 4 0v9"/>
+              </svg>
+            </div>
+            <h3>Church Planting</h3>
+            <p>Strategic insights on starting and growing healthy, gospel-centered communities.</p>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/>
+              </svg>
+            </div>
+            <h3>Personal Growth</h3>
+            <p>Discovering identity, purpose, and the path to becoming all God designed you to be.</p>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h3>Worship & Creativity</h3>
+            <p>The intersection of faith, art, and expression in building a vibrant spiritual life.</p>
+          </div>
+          
+          <div class="topic-card">
+            <div class="topic-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3>Relationships</h3>
+            <p>Building healthy families, friendships, and communities rooted in biblical principles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section events-section">
+      <div class="container">
+        <div class="events-content">
+          <div class="events-info reveal">
+            <span class="eyebrow">Events</span>
+            <h2>Types of gatherings</h2>
+            <p>From intimate leadership sessions to large conferences, Emmanuel adapts his message to serve your audience effectively.</p>
+          </div>
+          
+          <div class="events-list stagger-children">
+            <div class="event-item">
+              <span class="event-number">I</span>
+              <div class="event-details">
+                <h3>Conferences</h3>
+                <p>Large gatherings, annual conventions, and special events</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <span class="event-number">II</span>
+              <div class="event-details">
+                <h3>Church Services</h3>
+                <p>Sunday services, special services, and revival meetings</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <span class="event-number">III</span>
+              <div class="event-details">
+                <h3>Leadership Summits</h3>
+                <p>Pastor's conferences, staff trainings, and leadership retreats</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <span class="event-number">IV</span>
+              <div class="event-details">
+                <h3>Campus Events</h3>
+                <p>Youth conferences, campus outreaches, and student gatherings</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section> -->
 
-    <!-- Journey / Timeline Section -->
-    <!-- <section class="section timeline-section" id="journey">
+    <section class="section testimonials-section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="eyebrow">Journey</span>
-          <h2>Milestones along the way</h2>
+          <span class="eyebrow">Testimonials</span>
+          <h2>What organizers say</h2>
         </div>
         
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2012</span>
-              <h3>The Beginning</h3>
-              <p>Founded Celebration Church International with a vision to raise a generation of believers rooted in the gospel.</p>
-            </div>
-          </div>
+        <div class="testimonials-grid stagger-children">
+          <blockquote class="testimonial">
+            <p>"Emmanuel's teaching brought a fresh clarity to our conference. The attendees are still talking about the impact months later."</p>
+            <footer>
+              <cite>— Conference Organizer, Lagos</cite>
+            </footer>
+          </blockquote>
           
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2016</span>
-              <h3>Global Expansion</h3>
-              <p>Launched first international campus, beginning the journey to establish CCI across multiple continents.</p>
-            </div>
-          </div>
+          <blockquote class="testimonial">
+            <p>"His approach to leadership is both biblical and practical. Our team left equipped and inspired to lead better."</p>
+            <footer>
+              <cite>— Pastor, Nairobi</cite>
+            </footer>
+          </blockquote>
           
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2019</span>
-              <h3>Ministry Staff School</h3>
-              <p>Established formal leadership training programs to equip pastors, teachers, and worship leaders.</p>
-            </div>
-          </div>
-          
-          <div class="timeline-item reveal">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">2024</span>
-              <h3>20+ Campuses</h3>
-              <p>Celebration Church now spans Africa, Europe, and North America with a growing digital reach.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Stats Section -->
-    <section class="section stats-section">
-      <div class="container">
-        <div class="stats-grid reveal">
-          <div class="stat-item">
-            <span class="stat-number" data-count="20">0</span>
-            <span class="stat-suffix">+</span>
-            <p class="stat-label">Campuses & expressions worldwide</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="100">0</span>
-            <span class="stat-suffix">k+</span>
-            <p class="stat-label">Weekly audience across gatherings & digital</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="4">0</span>
-            <p class="stat-label">Major content streams: teaching, music, books, letters</p>
-          </div>
+          <blockquote class="testimonial">
+            <p>"The gospel comes alive when Emmanuel teaches. Our youth were deeply moved and transformed by his messages."</p>
+            <footer>
+              <cite>— Youth Director, London</cite>
+            </footer>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
+    <!-- Contact / Booking Section -->
+    <section id="contact" class="section booking-section">
       <div class="container">
-        <blockquote class="quote reveal">
-          <p>"A church becomes mature when believers truly see what Christ has done and mirror Him boldly in every space they occupy."</p>
-          <cite>— Emmanuel Iren</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta reveal">
-          <div class="cta__content">
-            <span class="eyebrow">Get in Touch</span>
-            <h2>Bring Emmanuel to your gathering</h2>
-            <p>Invite Emmanuel to speak at your conference, worship experience, campus launch, or media request.</p>
+        <div class="booking-grid">
+          <div class="booking-info reveal">
+            <span class="eyebrow">Request</span>
+            <h2>Invite Emmanuel</h2>
+            <p>Fill out the form with details about your event. The team typically responds within 48-72 hours.</p>
+            
+            <div class="booking-contact">
+              <h4>Direct Contact</h4>
+              <a href="mailto:hello@emmanueliren.com">hello@emmanueliren.com</a>
+            </div>
           </div>
-          <a href="speaking.html" class="btn btn--primary">Send Request</a>
+          
+          <form class="booking-form reveal" id="bookingForm">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Full name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="you@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="organization">Organization/Church *</label>
+              <input type="text" id="organization" name="organization" required placeholder="Name of church or organization">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="eventDate">Event Date</label>
+                <input type="date" id="eventDate" name="eventDate">
+              </div>
+              
+              <div class="form-group">
+                <label for="eventType">Event Type</label>
+                <select id="eventType" name="eventType">
+                  <option value="">Select type</option>
+                  <option value="conference">Conference</option>
+                  <option value="church-service">Church Service</option>
+                  <option value="leadership-summit">Leadership Summit</option>
+                  <option value="campus-event">Campus Event</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Event Details *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your event, expected attendance, topic preferences, and any other relevant details."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn--primary btn--full">Send Request</button>
+          </form>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->
@@ -212,10 +551,12 @@
         <div class="footer__nav">
           <h4 class="footer__title">Navigation</h4>
           <ul class="footer__links">
-            <li><a href="/">Home</a></li>
-            <li><a href="books.html">Books</a></li>
-            <li><a href="media.html">Media</a></li>
-            <li><a href="speaking.html">Speaking</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#speaking">Speaking</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         
@@ -241,6 +582,8 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/media.js"></script>
+  <script type="module" src="js/speaking.js"></script>
 </body>
 </html>

@@ -6,9 +6,40 @@ node_modules
 
 # Firebase
 .firebase
+.firebase/
 firebase-debug.log
+firebase-debug.*.log
 firepit-log.txt
 .firebaserc
+ui-debug.log
+firestore-debug.log
+database-debug.log
+pubsub-debug.log
+functions-debug.log
+
+# Firebase service accounts & configs
+firebase-adminsdk-*.json
+google-services.json
+GoogleService-Info.plist
+.runtimeconfig.json
+functions/.env
+
+# Firebase generated / emulator data
+firebase-export-*/
+.dataconnect/
+dataconnect-generated/
+functions/lib/
+functions/node_modules/
+.emulators/
+.idx/
+
+# Firebase project config files
+firebase.json
+firestore.rules
+firestore.indexes.json
+storage.rules
+database.rules.json
+remoteconfig.template.json
 
 # Sensitive configuration files
 public/js/firebase-config.js
@@ -18,6 +49,19 @@ service-account.json
 .env
 .env.local
 .env.*.local
+.envrc
+
+# Certificates and keys
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Credentials and secrets
+credentials.json
+*secret*
+secrets.*
 
 # Log files
 *.log
@@ -36,3 +80,6 @@ yarn-error.log*
 
 # OS files
 Thumbs.db
+firebase.json
+firebase.json
+AGENTS.md

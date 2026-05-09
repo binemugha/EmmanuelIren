@@ -6,10 +6,10 @@ This document provides essential information for AI coding agents working on thi
 
 ## Project Overview
 
-This is a **multi-page portfolio website** for Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, books, and speaking engagements.
+This is a **single-page portfolio website** for Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, books, and speaking engagements.
 
 ### Key Facts
-- **Project Type**: Multi-page static website (HTML, CSS, vanilla JavaScript)
+- **Project Type**: Single-page static website (HTML, CSS, vanilla JavaScript)
 - **Hosting Platform**: Firebase Hosting
 - **Live Domain**: Deployed to Firebase project `pasteyemmanueliren`
 - **Primary Purpose**: Portfolio and contact gateway for speaking requests
@@ -42,21 +42,19 @@ EmmanuelIren/
 ├── scripts/
 │   └── set-admin.js       # Script to set admin custom claims
 └── public/                # Static site content (deployed to hosting)
-    ├── index.html         # Home page
-    ├── about.html         # About page (bio, mission, timeline)
-    ├── media.html         # Media page (videos, music, articles)
-    ├── speaking.html      # Speaking/Contact page (topics, booking form, testimonials, contact info, general contact form)
+    ├── index.html         # Single-page website with all sections
     ├── admin.html         # Admin panel login/dashboard
     ├── css/
     │   ├── main.css       # Shared styles, nav, footer, components
-    │   ├── home.css       # Home page specific styles
-    │   ├── about.css      # About page specific styles
-    │   ├── media.css      # Media page specific styles
-    │   └── speaking.css   # Speaking & Contact page specific styles
+    │   ├── home.css       # Hero and About section styles
+    │   ├── books.css      # Books showcase and featured book styles
+    │   ├── media.css      # Media hero, video, podcast styles
+    │   └── speaking.css   # Speaking topics, events, testimonials, and booking form styles
     └── js/
         ├── main.js        # Shared JS (nav, animations, utilities)
-        ├── home.js        # Home page specific (counter animation)
-        ├── speaking.js    # Speaking form with Firebase
+        ├── books.js       # Books section scroll animations
+        ├── media.js       # Media section video background and parallax
+        ├── speaking.js    # Speaking booking form with Firebase
         ├── contact.js     # Contact form with Firebase
         ├── firebase-init.js      # Firebase SDK initialization
         └── firebase-config.js    # Firebase config (gitignored)
@@ -64,12 +62,14 @@ EmmanuelIren/
 
 ### Page Structure
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Home | `/` | Hero, ministry focus cards, stats, featured media, quote, CTA |
-| About | `/about` | Bio, ministry pillars, timeline, connect CTA |
-| Media | `/media` | Videos/sermons, music, articles |
-| Speaking | `/speaking` | Speaking topics, event types, booking form, testimonials, contact info, general contact form, newsletter CTA |
+| Section | Anchor | Description |
+|---------|--------|-------------|
+| Home | `#home` | Hero with background image, promo card, CTA buttons |
+| About | `#about` | Bio, ministry pillars, description |
+| Books | `#books` | Book showcase grid, featured book highlight |
+| Media | `#media` | Video background hero, featured sermon, podcast platforms |
+| Speaking | `#speaking` | Speaking topics, event types, testimonials |
+| Contact | `#contact` | Booking form for speaking requests |
 | Admin | `/admin` | Login dashboard for managing contact requests |
 
 ---
@@ -177,12 +177,14 @@ service cloud.firestore {
 - Media cards (image zoom, content layout)
 - Animations (fadeUp, reveal, stagger, image reveal)
 
-### Page CSS
-Each page has specific styles for:
-- Page header variations
+### Section CSS
+Each section has specific styles in its dedicated CSS file:
+- Section header variations
 - Section-specific layouts
 - Grid arrangements
 - Form styling
+
+All CSS files are loaded on the single page.
 
 ---
 
@@ -198,10 +200,12 @@ Each page has specific styles for:
 - Smooth scroll for anchors
 - Button ripple effect
 
-### Page Scripts
-- **home.js**: Animated counter for stats
-- **speaking.js**: Form submission to Firestore
-- **contact.js**: Form submission to Firestore
+### Section Scripts
+All scripts are loaded on the single page and initialize their features only when relevant elements exist in the DOM:
+- **books.js**: Books section scroll reveal animations
+- **media.js**: Media section video background, parallax, and audio wave effects
+- **speaking.js**: Speaking booking form submission to Firestore
+- **contact.js**: Contact form submission to Firestore
 
 ### Firebase
 - **firebase-init.js**: Initializes Firebase App, Auth, Firestore, Storage
@@ -239,4 +243,4 @@ Each page has specific styles for:
 
 ---
 
-*Last updated: 2026-03-28*
+*Last updated: 2026-05-09*
