@@ -148,7 +148,19 @@
 /* Booking Section
    ========================================================================== */
 .booking-section {
-  background: var(--white);
+  background: var(--black);
+}
+
+.booking-section .booking-info h2 {
+  color: var(--white);
+}
+
+.booking-section .booking-info p {
+  color: var(--gray-400);
+}
+
+.booking-section .booking-contact a:hover {
+  color: var(--white);
 }
 
 .booking-grid {
@@ -253,8 +265,12 @@
 /* Testimonials Section
    ========================================================================== */
 .testimonials-section {
-  background: var(--gray-100);
+  background: var(--black);
   padding-bottom: 6rem;
+}
+
+.testimonials-section .section-header h2 {
+  color: var(--white);
 }
 
 .testimonials-grid {
