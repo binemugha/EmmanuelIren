@@ -335,4 +335,8 @@
   .about__media {
     min-height: 300px;
   }
+
+  .hero__card {
+    display: none;
+  }
 }

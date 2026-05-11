@@ -842,17 +842,36 @@
 
 @media (max-width: 900px) {
   .books-showcase {
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 360px;
+    margin: 3rem auto;
+    perspective: none;
   }
   
   .book-card {
-    width: 160px;
-    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 320px;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
   }
   
-  .book-1, .book-2, .book-3, .book-4, .book-5, .book-6 {
-    transform: none;
+  .book-1 { transform: rotate(-6deg) translate(8px, 6px); z-index: 1; }
+  .book-2 { transform: rotate(5deg) translate(12px, -4px); z-index: 2; }
+  .book-3 { transform: rotate(-4deg) translate(-6px, 8px); z-index: 3; }
+  .book-4 { transform: rotate(3deg) translate(10px, -2px); z-index: 4; }
+  .book-5 { transform: rotate(-2deg) translate(-8px, 4px); z-index: 5; }
+  .book-6 { transform: rotate(1deg) translate(2px, 0); z-index: 6; }
+  
+  .book-card:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-12px);
+    z-index: 10;
   }
   
   .featured-grid {
@@ -904,9 +923,15 @@
     grid-template-columns: 1fr;
   }
   
+  .books-showcase {
+    width: 200px;
+    height: 280px;
+    margin: 2rem auto;
+  }
+  
   .book-card {
-    width: 140px;
-    height: 200px;
+    width: 180px;
+    height: 260px;
   }
   
   .book-title {

@@ -705,6 +705,8 @@ p {
   .nav__toggle {
     display: block;
     z-index: 1001;
+    justify-self: end;
+    grid-column: 3;
   }
   
   .nav__toggle--open .nav__toggle-line:nth-child(1) {
