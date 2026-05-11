@@ -23,7 +23,7 @@
 }
 
 .admin-card h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
 }
@@ -125,7 +125,7 @@
 }
 
 .admin-header h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1.5rem;
 }
 
@@ -177,7 +177,7 @@
 }
 
 .contact-requests h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
