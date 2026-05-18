@@ -1,3 +1,4 @@
+<!-- From: /Users/benjamin/Documents/Software Projects/Website Projects/EmmanuelIren/AGENTS.md -->
 # AGENTS.md — Emmanuel Iren Portfolio
 
 This document provides essential information for AI coding agents working on this project.
@@ -6,13 +7,13 @@ This document provides essential information for AI coding agents working on thi
 
 ## Project Overview
 
-This is a **single-page portfolio website** for Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, books, and speaking engagements.
+This is a **multi-page portfolio website** for Apostle Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, books, and speaking engagements.
 
 ### Key Facts
-- **Project Type**: Single-page static website (HTML, CSS, vanilla JavaScript)
+- **Project Type**: Multi-page static website (HTML, CSS, vanilla JavaScript)
 - **Hosting Platform**: Firebase Hosting
-- **Live Domain**: Deployed to Firebase project `pasteyemmanueliren`
-- **Primary Purpose**: Portfolio and contact gateway for speaking requests
+- **Live Domain**: emmanueliren.com
+- **Primary Purpose**: Portfolio, store, and contact gateway for speaking requests
 
 ---
 
@@ -22,7 +23,7 @@ This is a **single-page portfolio website** for Emmanuel Iren, a Nigerian pastor
 |-----------|------------|
 | Frontend | Vanilla HTML5, CSS3, ES6+ JavaScript |
 | Styling | Custom CSS with CSS variables, no frameworks |
-| Fonts | Google Fonts (Inter, Playfair Display) |
+| Fonts | Google Fonts (Cormorant Garamond, DM Sans) |
 | Animation | CSS animations + Intersection Observer API |
 | Build Tool | None (static files served directly) |
 | Hosting | Firebase Hosting |
@@ -39,38 +40,92 @@ EmmanuelIren/
 ├── .firebaserc            # Firebase project aliases
 ├── package.json           # Node.js dependencies and npm scripts
 ├── .gitignore             # Git ignore rules (includes firebase-config.js)
+├── PROJECT_BRIEF.md       # Full brand brief and copy document
 ├── scripts/
 │   └── set-admin.js       # Script to set admin custom claims
 └── public/                # Static site content (deployed to hosting)
-    ├── index.html         # Single-page website with all sections
+    ├── index.html         # Home page
+    ├── about.html         # About / Biography
+    ├── ministry.html      # Ministry / CCI
+    ├── media.html         # Media (sermons, music, film, press)
+    ├── speaking.html      # Speaking / Booking
+    ├── store.html         # Store / Products
+    ├── connect.html       # Connect / Social / Church finder
     ├── admin.html         # Admin panel login/dashboard
     ├── css/
-    │   ├── main.css       # Shared styles, nav, footer, components
-    │   ├── home.css       # Hero and About section styles
-    │   ├── books.css      # Books showcase and featured book styles
-    │   ├── media.css      # Media hero, video, podcast styles
-    │   └── speaking.css   # Speaking topics, events, testimonials, and booking form styles
-    └── js/
-        ├── main.js        # Shared JS (nav, animations, utilities)
-        ├── books.js       # Books section scroll animations
-        ├── media.js       # Media section video background and parallax
-        ├── speaking.js    # Speaking booking form with Firebase
-        ├── contact.js     # Contact form with Firebase
-        ├── firebase-init.js      # Firebase SDK initialization
-        └── firebase-config.js    # Firebase config (gitignored)
+    │   ├── main.css       # Design system, shared styles, nav, footer
+    │   ├── home.css       # Home page styles
+    │   ├── about.css      # About page styles
+    │   ├── ministry.css   # Ministry page styles
+    │   ├── media.css      # Media page styles
+    │   ├── speaking.css   # Speaking page styles
+    │   ├── store.css      # Store page styles
+    │   ├── connect.css    # Connect page styles
+    │   └── admin.css      # Admin panel styles
+    ├── js/
+    │   ├── main.js        # Shared JS (nav, animations, utilities)
+    │   ├── media-tabs.js  # Media page tab switching
+    │   ├── speaking.js    # Speaking booking form with Firebase
+    │   ├── contact.js     # Contact form with Firebase
+    │   ├── admin.js       # Admin dashboard logic
+    │   ├── firebase-init.js      # Firebase SDK initialization
+    │   └── firebase-config.js    # Firebase config (gitignored)
+    └── images/            # Photography and assets
 ```
 
 ### Page Structure
 
-| Section | Anchor | Description |
-|---------|--------|-------------|
-| Home | `#home` | Hero with background image, promo card, CTA buttons |
-| About | `#about` | Bio, ministry pillars, description |
-| Books | `#books` | Book showcase grid, featured book highlight |
-| Media | `#media` | Video background hero, featured sermon, podcast platforms |
-| Speaking | `#speaking` | Speaking topics, event types, testimonials |
-| Contact | `#contact` | Booking form for speaking requests |
-| Admin | `/admin` | Login dashboard for managing contact requests |
+| Page | File | Description |
+|------|------|-------------|
+| Home | index.html | Hero, stats, scripture, four pillars, sermon section |
+| About | about.html | Bio, family strip, honours |
+| Ministry | ministry.html | CCI intro, discipleship platforms |
+| Media | media.html | Sermons, music, film, press tabs |
+| Speaking | speaking.html | Topics, past events, booking form |
+| Store | store.html | Product grid with badges |
+| Connect | connect.html | Social platforms, church finder |
+| Admin | admin.html | Login dashboard for managing contact requests |
+
+---
+
+## Design System
+
+### Colour Palette
+| Name | Hex | Role |
+|------|-----|------|
+| Black | #080810 | Primary background |
+| Deep Navy | #0D0D1A | Card surfaces, nav, stats bar |
+| Gold | #C4973A | Primary accent — π logo, headings, CTAs, borders |
+| Cream | #F2EDE4 | Primary text colour |
+| Muted Grey | #8A8A9A | Secondary text, captions |
+| Red | #C0392B | Signal only — live badges, new badges |
+
+### Typography
+| Role | Font | Weight |
+|------|------|--------|
+| Display / Headings | Cormorant Garamond | 300, 400, Italic |
+| Body / UI | DM Sans | 300, 400, 500 |
+
+### CSS Variables
+```css
+--black: #080810
+--navy: #0D0D1A
+--navy2: #111122
+--gold: #C4973A
+--gold-lt: #E2B96A
+--red: #C0392B
+--cream: #F2EDE4
+--muted: #8A8A9A
+--serif: 'Cormorant Garamond', Georgia, serif
+--sans: 'DM Sans', sans-serif
+```
+
+### Design Principles
+- Gold dominates. It is the only brand accent. Red is functional only.
+- π on every page. In the nav logo (small, gold) and as watermark in hero.
+- Dark background only. No light mode.
+- Mobile-first.
+- One primary CTA per page.
 
 ---
 
@@ -87,23 +142,17 @@ Containers with `.stagger-children` animate child elements sequentially:
 - Fade up animation
 
 ### Card Hover Effects
-- Transform: translateY(-8px)
+- Transform: translateY(-6px)
 - Box shadow increase
-- Top border accent color reveal
-- Icon background/color change
-
-### Image Reveal
-Images with `.image-reveal` have a wipe effect:
-- Color overlay slides away
-- Image scales down from 1.2x to 1x
+- Top border accent color reveal (gold)
 
 ### Navigation
 - Fixed position with scroll-triggered background change
 - Backdrop blur when scrolled
 - Mobile slide-out menu
 
-### Counter Animation
-Stat numbers animate counting up when in view (home page)
+### Live Dot
+`.live-dot` pulses with CSS animation for live indicators.
 
 ---
 
@@ -136,6 +185,7 @@ Sets a Firebase Auth user as admin (requires service-account.json).
 ### Hosting (firebase.json)
 - **Public directory**: `public/`
 - **Clean URLs**: Enabled (removes `.html` extensions)
+- **Trailing Slash**: Disabled
 - **Cache Headers**: CSS/JS (1 year), Images (7 days)
 
 ### Firestore Collections
@@ -170,21 +220,24 @@ service cloud.firestore {
 - Reset and base styles
 - Typography (eyebrow, headings)
 - Utilities (container, sr-only)
-- Buttons (primary, outline, text variants)
+- Buttons (primary, ghost, red, text variants)
 - Navigation (fixed, scrolled state, mobile)
 - Footer (grid layout, social links)
-- Cards (hover effects, icon animations)
-- Media cards (image zoom, content layout)
-- Animations (fadeUp, reveal, stagger, image reveal)
+- Cards (hover effects)
+- Product cards (image, badge, price)
+- Forms (inputs, labels, select, textarea)
+- Animations (fadeUp, reveal, stagger, page enter)
+- Scripture strip
+- Stats bar
 
-### Section CSS
-Each section has specific styles in its dedicated CSS file:
-- Section header variations
-- Section-specific layouts
-- Grid arrangements
-- Form styling
+### Page CSS
+Each page has specific styles in its dedicated CSS file:
+- Page header variations
+- Page-specific layouts and grids
+- Tab panels (media page)
+- Tables (speaking page)
 
-All CSS files are loaded on the single page.
+All CSS files use the shared variables from main.css.
 
 ---
 
@@ -195,17 +248,14 @@ All CSS files are loaded on the single page.
 - Mobile menu toggle
 - Scroll reveal observer
 - Stagger children observer
-- Image reveal observer
 - Dynamic year in footer
-- Smooth scroll for anchors
-- Button ripple effect
+- Smooth scroll for anchors (same page only)
 
-### Section Scripts
-All scripts are loaded on the single page and initialize their features only when relevant elements exist in the DOM:
-- **books.js**: Books section scroll reveal animations
-- **media.js**: Media section video background, parallax, and audio wave effects
+### Page Scripts
+- **media-tabs.js**: Media page tab switching (Sermons | Music | Film | Press)
 - **speaking.js**: Speaking booking form submission to Firestore
 - **contact.js**: Contact form submission to Firestore
+- **admin.js**: Admin dashboard authentication and data loading
 
 ### Firebase
 - **firebase-init.js**: Initializes Firebase App, Auth, Firestore, Storage
@@ -216,8 +266,8 @@ All scripts are loaded on the single page and initialize their features only whe
 ## External Resources
 
 ### Google Fonts
-- Inter (400, 500, 600)
-- Playfair Display (600, 700)
+- Cormorant Garamond (300, 400, Italic)
+- DM Sans (300, 400, 500)
 
 ### External Links
 - **CCI Website**: https://joincci.org
@@ -225,8 +275,8 @@ All scripts are loaded on the single page and initialize their features only whe
 - **Instagram**: https://www.instagram.com/pst_iren/
 - **X (Twitter)**: https://x.com/pst_iren
 - **Spotify**: https://open.spotify.com/artist/1Ge81wiDXhRxTHVE1pdHyw
-- **Bookstore**: https://flutterwave.com/store/emmanuelirenbooks
 - **Substack**: https://emmanueliren.substack.com/
+- **Film**: https://whataboutusmovie.com
 - **Email**: hello@emmanueliren.com
 
 ---
@@ -243,4 +293,4 @@ All scripts are loaded on the single page and initialize their features only whe
 
 ---
 
-*Last updated: 2026-05-09*
+*Last updated: 2026-05-18*
