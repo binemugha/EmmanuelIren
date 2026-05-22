@@ -159,4 +159,13 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Service Worker registration for offline caching & Cloudinary cost reduction
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((reg) => console.log('SW registered:', reg.scope))
+      .catch((err) => console.log('SW registration failed:', err));
+  });
+}
+
 console.log('Emmanuel Iren Portfolio - Ready');

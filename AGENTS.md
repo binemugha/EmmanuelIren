@@ -7,7 +7,7 @@ This document provides essential information for AI coding agents working on thi
 
 ## Project Overview
 
-This is a **multi-page portfolio website** for Apostle Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, books, and speaking engagements.
+This is a **multi-page portfolio website** for Apostle Emmanuel Iren, a Nigerian pastor, author, and communicator who leads Celebration Church International (CCI). The site serves as a central hub showcasing his ministry work, media channels, media resources, and speaking engagements.
 
 ### Key Facts
 - **Project Type**: Multi-page static website (HTML, CSS, vanilla JavaScript)
@@ -27,6 +27,7 @@ This is a **multi-page portfolio website** for Apostle Emmanuel Iren, a Nigerian
 | Animation | CSS animations + Intersection Observer API |
 | Build Tool | None (static files served directly) |
 | Hosting | Firebase Hosting |
+| Image CDN | Cloudinary (responsive images, auto WebP/AVIF) |
 | Backend | Firebase (Authentication, Firestore, Storage, Analytics) |
 | Dev Dependencies | `firebase-tools`, `cross-env`, `firebase-admin` |
 
@@ -178,6 +179,19 @@ npm run set-admin user@email.com
 ```
 Sets a Firebase Auth user as admin (requires service-account.json).
 
+### Upload Images to Cloudinary
+```bash
+# Preview
+npm run upload-images -- --dry-run
+
+# Upload all images
+npm run upload-images
+
+# Upload + update HTML/CSS with your cloud name
+npm run upload-images -- --update-html
+```
+Uploads `public/images/` to Cloudinary CDN. See `CLOUDINARY_SETUP.md` for credentials setup.
+
 ---
 
 ## Firebase Configuration
@@ -187,6 +201,16 @@ Sets a Firebase Auth user as admin (requires service-account.json).
 - **Clean URLs**: Enabled (removes `.html` extensions)
 - **Trailing Slash**: Disabled
 - **Cache Headers**: CSS/JS (1 year), Images (7 days)
+
+### Image CDN (Cloudinary)
+All photos and artwork are served via Cloudinary with:
+- **Automatic format selection** (`f_auto`) — WebP/AVIF for modern browsers
+- **Automatic quality** (`q_auto`) — optimized file size
+- **Responsive `srcset`** — browser downloads only the needed resolution
+- **Folder structure**: `emmanueliren/` with subfolders `books/` and `media/`
+- **Setup**: See `CLOUDINARY_SETUP.md` for upload instructions
+
+The `logo.svg` remains local in `public/images/` (SVGs don't benefit from image CDN optimization).
 
 ### Firestore Collections
 - `contactRequests` - General contact form submissions
@@ -264,6 +288,12 @@ All CSS files use the shared variables from main.css.
 ---
 
 ## External Resources
+
+### Cloudinary (Image CDN)
+- Preconnect added in `<head>` for faster image loading
+- All image URLs use `f_auto,q_auto,w_WIDTH` transformations
+- Responsive `srcset` with `sizes` attributes on all content images
+- Configuration helper in `public/js/cloudinary-config.js`
 
 ### Google Fonts
 - Cormorant Garamond (300, 400, Italic)

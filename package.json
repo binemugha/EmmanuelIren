@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "cross-env NO_UPDATE_NOTIFIER=1 firebase emulators:start --only hosting",
     "deploy": "cross-env NO_UPDATE_NOTIFIER=1 firebase deploy --only hosting",
-    "set-admin": "node scripts/set-admin.js"
+    "set-admin": "node scripts/set-admin.js",
+    "upload-images": "node scripts/upload-images.js"
   },
   "keywords": [
     "firebase",
@@ -16,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cloudinary": "^2.6.0",
     "cross-env": "^10.1.0",
     "firebase-admin": "^13.7.0",
     "firebase-tools": "^14.25.0"

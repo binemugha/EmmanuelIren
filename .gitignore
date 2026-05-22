@@ -60,6 +60,7 @@ service-account.json
 
 # Credentials and secrets
 credentials.json
+cloudinary-credentials.json
 *secret*
 secrets.*
 

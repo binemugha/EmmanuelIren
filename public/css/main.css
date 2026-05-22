@@ -170,20 +170,20 @@ p {
 }
 
 .btn--primary {
-  background: var(--accent);
+  background: #C4973A;
   color: var(--white);
-  box-shadow: 0 4px 14px rgba(163, 32, 21, 0.3);
+  box-shadow: 0 4px 14px rgba(196, 151, 58, 0.3);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(163, 32, 21, 0.4);
+  box-shadow: 0 6px 20px rgba(196, 151, 58, 0.4);
 }
 
 .btn--outline {
   border-color: var(--black);
   color: var(--black);
-  background: transparent;
+  background: var(--white);
 }
 
 .btn--outline:hover {
@@ -194,12 +194,14 @@ p {
 
 .btn--outline-light {
   border-color: var(--white);
-  color: var(--white);
+  color: var(--black);
+  background: var(--white);
 }
 
 .btn--outline-light:hover {
-  background: var(--white);
-  color: var(--black);
+  background: transparent;
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .btn--text {
