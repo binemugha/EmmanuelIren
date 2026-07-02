@@ -75,7 +75,7 @@ button {
   letter-spacing: 0.25em;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent);
+  color: #F2EDE4;
 }
 
 h1, h2, h3, h4 {
@@ -207,7 +207,7 @@ p {
 .btn--text {
   padding: 0;
   background: transparent;
-  color: var(--accent);
+  color: #F2EDE4;
   border: none;
   box-shadow: none;
 }
@@ -421,7 +421,7 @@ p {
 }
 
 .footer__social a:hover {
-  color: var(--accent);
+  color: #F2EDE4;
   transform: translateY(-2px);
 }
 
@@ -502,7 +502,7 @@ p {
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
+  color: #F2EDE4;
   transition: all 0.3s var(--transition-smooth);
 }
 
@@ -565,7 +565,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--accent);
+  color: #F2EDE4;
   margin-bottom: 0.5rem;
 }
 
